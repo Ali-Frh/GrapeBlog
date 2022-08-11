@@ -8,14 +8,14 @@ In the other hand i find github pages a great opportunity for static backend-les
 and for this goal, i found a project named Jekyll which i find it very complicated and even not compatible with RTL Languages, so long story short i wanted to make a Jekyll alternative with less complexity without ruby-crap and stuff.
 
 ## Key Features:
-### Performance ⚡ \
+### Performance ⚡
 nothing is faster than vanilla HTML and CSS!
-### Security 🛡️ \
+### Security 🛡️ 
 no backend = no vulnerability
-### Easy to Use 👌 \ 
+### Easy to Use 👌 
 Just write your Post and Build it.
 ### Supports different Themes 🖼️
-### Comment System 💬   \         
+### Comment System 💬         
 Who says static websites can't have comment system ?!
 
 ## Project State:
