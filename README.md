@@ -25,17 +25,18 @@ Who says static websites can't have comment system ?!
 ## Project State:
 under construction ...
 
-## Project Goals:
-☐ Cross Platform Support \
-☐ Design Another Themes \
-☐ Add Useful Comments (in code) \
+## TODO:
+⬜ Cross Platform Support \
+⬜ Design Another Themes \
+⬜ Add Useful Comments (in code) \
 ☑️ Choose Proper Licence \
 ☑️ Candy-ass Terminal Responses \
-☐ Make Wiki and Theming Guide \
-☐ Make LTR Template \
-☐ Simplify adding Custom Pages \
-☐ Make Cli Tool \
-☐ Controll through Web UI
+⬜ Make Wiki and Theming Guide \
+⬜ Make LTR Template \
+⬜ Simplify adding Custom Pages \
+⬜ Make Cli Tool \
+⬜ Controll through Web UI \
+⬜ Screenshots
 
 
 
