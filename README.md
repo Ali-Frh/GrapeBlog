@@ -1,5 +1,6 @@
 # GrapeBlog 🍇
-![Development Status](https://img.shields.io/badge/Development%20Status-Beta-blue)
+![Development Status](https://img.shields.io/badge/Development%20Status-Beta-green)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
 a Simple Static Blog Generator
 
@@ -27,10 +28,15 @@ under construction ...
 ## Project Goals:
 ☐ Cross Platform Support \
 ☐ Design Another Themes \
-☐ Add Useful Comments \
-☐ Choose Proper Licence \
-☐ Candy-ass Terminal Responses \
-☐ Make Wiki and Theming Guide 
+☐ Add Useful Comments (in code) \
+☑️ Choose Proper Licence \
+☑️ Candy-ass Terminal Responses \
+☐ Make Wiki and Theming Guide \
+☐ Make LTR Template \
+☐ Simplify adding Custom Pages \
+☐ Make Cli Tool \
+☐ Controll through Web UI
+
 
 
 ## Thanks To:
