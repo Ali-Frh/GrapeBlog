@@ -1,5 +1,8 @@
 # GrapeBlog 🍇
+![Development Status](https://img.shields.io/badge/Development%20Status-Beta-blue)
+
 a Simple Static Blog Generator
+
 
 ## WTF Is This ?
 GrapeBlog is a simple static blog generator, thats it! \
@@ -32,4 +35,6 @@ under construction ...
 
 ## Thanks To:
 - Jekyll Project for inspiration 
-- Cusdis Project for Comment Section 
+- Cusdis Project for Comment Section
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
