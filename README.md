@@ -38,7 +38,10 @@ under construction ...
 ⬜ Controll through Web UI \
 ⬜ Screenshots
 
-
+## Notes:
+1. We use python-markdown package as markdown parser, [Here](https://daringfireball.net/projects/markdown/syntax) is the Syntax document of it's accent.
+(note that in this Markdown Accent you have to Use two spaces at the end of the line for newline effect)\
+2. Do not Change Your Posts' Slug! Because our comment system linked to post's filename (Date_Slug) and if you change it you will lose your previous comments. (its fine for posts with no comments though).
 
 ## Thanks To:
 - Jekyll Project for inspiration 
