@@ -1,8 +1,9 @@
 # GrapeBlog 🍇
 ![Development Status](https://img.shields.io/badge/Development%20Status-Beta-green)
-![License](https://img.shields.io/badge/License-MIT-blue)
-
-a Simple Static Blog Generator
+![License](https://img.shields.io/badge/License-MIT-blue) \
+a Simple Static Blog Generator <br/> <br/>
+![out](https://user-images.githubusercontent.com/16538325/185813590-ecf3ee2d-44d4-4ab1-aa9a-bcf8aa17afdd.gif) \
+Demo: https://Ali-Frh.github.io/GrapeBlog
 
 
 ## WTF Is This ?
