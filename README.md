@@ -6,10 +6,10 @@ a Simple Static Blog Generator
 
 
 ## WTF Is This ?
-GrapeBlog is a simple static blog generator, thats it! \
-Im always interested in writing blog posts, but also i have concerns about keeping it as free as possible, \
-In the other hand i find github pages a great opportunity for static backend-less web pages to share their knowledge without any concern.\
-and for this goal, i found a project named Jekyll which i find it very complicated and even not compatible with RTL Languages, so long story short i wanted to make a Jekyll alternative with less complexity without ruby-crap and stuff.
+GrapeBlog is a simple static blog generator, that's it!\
+I'm always interested in writing blog posts, but also I have concerns about keeping them as free as possible,\
+On the other hand, I find Github Pages a great opportunity for static backend-less web pages to share their knowledge without any concern.\
+and for this goal, I found a project named Jekyll which I find it very complicated and even not compatible with RTL Languages, so long story short I wanted to make a Jekyll alternative with less complexity without ruby-crap and stuff.
 
 ## Key Features:
 ### Performance ⚡
@@ -40,7 +40,7 @@ under construction ...
 
 ## Notes:
 1. We use python-markdown package as markdown parser, [Here](https://daringfireball.net/projects/markdown/syntax) is the Syntax document of it's accent.
-(note that in this Markdown Accent you have to Use two spaces at the end of the line for newline effect)\
+(note that in this Markdown Accent you have to Use two spaces at the end of the line for newline effect)
 2. Do not Change Your Posts' Slug! Because our comment system linked to post's filename (Date_Slug) and if you change it you will lose your previous comments. (its fine for posts with no comments though).
 
 ## Thanks To:
