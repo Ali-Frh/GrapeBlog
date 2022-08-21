@@ -469,7 +469,7 @@ def gen_pages(home):
 		
 
 def do():
-	sprint(f'GrapeBlog v{VERSION} Initialized!',color=bcolors.blue)
+	sprint(f'GrapeBlog v{VERSION} Initialized!\n',color=bcolors.blue)
 	# STEP 0 - Controling Step !
 	
 	system('mkdir dist &> /dev/null')
