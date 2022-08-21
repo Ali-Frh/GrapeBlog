@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>[& Page_Title &]</title>
+  </head>
+  <body>
+   <nav id="navbar"> 
+      <div class="navcontainer" dir="rtl">
+        <div>
+          <button id="hamburger" onclick="hamburgerMenu()">&#8801;</button>
+          <ul class="hamburger-meat">
+            <li><a href="[& Home_Link &]"> خانه </a></li>
+            <!-- <li><a href="[& Categories_Link &]"> دسته بندی ها</a></li> -->
+            [& Nav_Links &]
+          </ul>
+          
+        </div>
+
+        <a href="[& Home_Link &]" id="nav-logo">
+          <span>[& Blog_Name &]</span>
+          <img src="[& Base_Url &]/assets/grape-100px.png" width="70px" alt="logo">
+        </a>
+      <div>
+    </nav>
+
+    <div id="nextLayer">
+      
+      <div id="main">
+        [& Yield &]
+      </div>
+
+
+      <div id="sideBar" dir="rtl">
+        <div class="sideCard">
+          <span>آخرین مطالب</span>
+            [& Latest_Posts &]
+          <!-- <ul>
+            <li><a href="#">مطلب ۱</a></li>
+            <li><a href="#">مطلب ۲</a></li>
+            <li><a href="#">مطلب ۳</a></li>
+            <li><a href="#">مطلب ۴</a></li>
+            <li><a href="#">مطلب ۵</a></li>
+
+          </ul>  -->
+        </div>
+        <div id="categories" class="sideCard mt-2">
+          <span>دسته بندی مطالب</span>
+            [& Categories &]
+        </div>
+      </div>
+
+
+
+    </div>
+      
+    <div id="footer">
+      <div class="footcontainer" dir="rtl">
+        <span>هرگونه کپی برداری از مطالب فقط با کسب اجازه ی مدیریت مجاز است.</span>
+        <br>
+        <span>تهیه شده به کمک <a href="https://github.com/ALi-Frh/GrapeBlog">GrapeBlog</a></span>
+        
+      </div>
+    </div>
+  </body>
+
+  <link rel="stylesheet" href="[& Base_Url &]/assets/styles.css">
+<script>
+  function hamburgerMenu(){
+    let d = document.getElementsByClassName('hamburger-meat')[0].classList.toggle('show');
+  }
+</script>
+
+
+</html>
