@@ -4,7 +4,7 @@
 # License: MIT																	#
 # (Do what ever you want at YOUR RISK, we dont take ANY responsibility at all)	#
 #--------------------------------------------------------------------------------
-
+VERSION = "1.0"
 
 
 import markdown
@@ -469,6 +469,7 @@ def gen_pages(home):
 		
 
 def do():
+	sprint(f'GrapeBlog v{VERSION} Initialized!',color=bcolors.blue)
 	# STEP 0 - Controling Step !
 	
 	system('mkdir dist &> /dev/null')
@@ -509,7 +510,9 @@ def argparse(arg):
 	if "-q" in arg:
 		global quiet
 		quiet = True
-
+	if "-v" in arg:
+		sprint(f'GrapeBlog ‌‌v{VERSION}',color=bcolors.blue)
+		return
 
 	# Eventually
 	do()
