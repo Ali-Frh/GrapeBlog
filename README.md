@@ -35,6 +35,7 @@ Version 1 Deployed.
 ☑️ Candy-ass Terminal Responses \
 ⬜ Make Wiki and Theming Guide \
 ⬜ Make LTR Template \
+⬜ Jalali Calendar \
 ☑️ Simplify adding Custom Pages \
 ⬜ Make Cli Tool \
 ⬜ Control through Web UI \
