@@ -38,7 +38,7 @@
       /* font-weight: bold; */
     }
     .navcontainer{
-      margin:0px 2rem 0px 2rem;
+      margin:0px 2rem;
       padding-top: 0.5rem;
       display:flex;
       justify-content: space-between;
@@ -89,7 +89,7 @@
     #nextLayer{
       display: flex;
       justify-content: space-between;
-      padding: 0.5rem 2rem 0.5rem 2rem;
+      padding: 0.5rem 2rem;
       gap: 1%;
     }
     #main{
@@ -231,7 +231,7 @@
       }
 
       .footcontainer{
-        margin:0px 2rem 0px 2rem;
+        margin:0px 2rem;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
       }
