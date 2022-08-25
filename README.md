@@ -27,7 +27,7 @@ Who says static websites can't have comment system ?!
 ## Project State:
 Version 1 Deployed.
 ## TODO:
-(in order of priority (completed first))
+(in order of priority (completed first)) \
 ☑️ Choose Proper Licence \
 ☑️ Candy-ass Terminal Responses \
 ☑️ Simplify adding Custom Pages \
