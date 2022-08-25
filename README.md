@@ -26,22 +26,23 @@ Who says static websites can't have comment system ?!
 ## Project State:
 Version 1 Deployed.
 ## TODO:
+(in order of priority (completed first))
+☑️ Choose Proper Licence \
+☑️ Candy-ass Terminal Responses \
+☑️ Simplify adding Custom Pages \
+☑️ Screenshots and Demo
 ⬜ Cross Platform Support \
 ⬜ Following PEP-8 Pattern \
 ⬜ Increase GTMetrix of Default Template \
+⬜ Make LTR Template \
+⬜ Make Wiki and Theming Guide \
 ⬜ Assets Watermarker \
 ⬜ Design Another Themes \
 ⬜ Human Friendly gh-pages Deployer \
 ⬜ Add Useful Comments (in code) \
-☑️ Choose Proper Licence \
-☑️ Candy-ass Terminal Responses \
-⬜ Make Wiki and Theming Guide \
-⬜ Make LTR Template \
 ⬜ Jalali Calendar \
-☑️ Simplify adding Custom Pages \
 ⬜ Make Cli Tool \
 ⬜ Control through Web UI \
-⬜ Screenshots
 
 ## Notes:
 1. If You want to use Github Pages with GrapeBlog, there is a important thing that you should know:\
