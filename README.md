@@ -44,6 +44,7 @@ Version 1 Deployed.
 ⬜ Human Friendly gh-pages Deployer \
 ⬜ Add Useful Comments (in code) \
 ⬜ Make Cli Tool \
+⬜ Post Recovery Tool \
 ⬜ Control through Web UI 
 
 ## Notes:
