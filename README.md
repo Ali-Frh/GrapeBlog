@@ -28,6 +28,7 @@ Version 1 Deployed.
 ## TODO:
 ⬜ Cross Platform Support \
 ⬜ Following PEP-8 Pattern \
+⬜ Increase GTMetrix of Default Template \
 ⬜ Design Another Themes \
 ⬜ Human Friendly gh-pages Deployer \
 ⬜ Add Useful Comments (in code) \
