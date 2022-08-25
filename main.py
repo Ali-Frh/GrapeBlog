@@ -4,7 +4,7 @@
 # License: MIT																	#
 # (Do what ever you want at YOUR RISK, we dont take ANY responsibility at all)	#
 #--------------------------------------------------------------------------------
-VERSION = "1.0"
+VERSION = "1.1"
 
 
 import markdown
@@ -14,8 +14,13 @@ import itertools
 from time import sleep
 import re
 from sys import argv
+from datetime import datetime
+from Plugins.jtime import gregorian_to_jalali,jweek,jmonth,hc
 
 load_dotenv('config.env')
+
+Show_As_Jalali = bool(getenv("Show_As_Jalali"))
+# print(Show_As_Jalali,type(Show_As_Jalali))
 
 # Basic Data
 dist_path = "dist"
@@ -290,9 +295,17 @@ def h_and_p(home):
 			for it in r:
 				mini = mini.replace(it,baseurl + it)            
 
+			Date = pkey.split('_')[0]
+			if Show_As_Jalali == True:
+				gt = datetime.strptime(Date, '%Y-%m-%d %H:%M')
+				jd = gregorian_to_jalali(gt.year,gt.month,gt.day)
+				# Important Note: in Python, Monday is 0 and Sunday is 6'th day.
+				week = gt.weekday()
+				Date = f'{jweek[week]}، {jd[2]} {jmonth[jd[1]]} ماه {jd[0]}، ساعت {hc(str(gt.hour))}:{hc(str(gt.minute))}'
+
 
 			dic = {
-				'[& Post_Date &]':pkey.split('_')[0],
+				'[& Post_Date &]':Date,
 				"[& Post_Title &]":pval.split('\n')[1][1:],
 				"[& Post_MiniText &]" : mini,
 				"[& Post_Url &]":baseurl+"posts/"+posturl+".html",
@@ -338,8 +351,17 @@ def individual_posts(home):
 		r = re.findall('src="(.*)"',txt)
 		for it in r:
 			txt = txt.replace(it,baseurl + it) 
+
+		Date = pkey.split('_')[0]
+		if Show_As_Jalali == True:
+			gt = datetime.strptime(Date, '%Y-%m-%d %H:%M')
+			jd = gregorian_to_jalali(gt.year,gt.month,gt.day)
+			week = gt.weekday()
+			Date = f'{jweek[week]}، {jd[2]} {jmonth[jd[1]]} ماه {jd[0]}، ساعت {hc(str(gt.hour))}:{hc(str(gt.minute))}'
+
+
 		dic = {
-			'[& Post_Date &]':pkey.split('_')[0],
+			'[& Post_Date &]':Date,
 			"[& Post_Title &]":pval.split('\n')[1][1:],
 			"[& Post_Text &]" :txt,
 			"[& Post_Url &]":baseurl+"posts/"+posturl+".html",
@@ -406,9 +428,18 @@ def individual_cats_gen(home):
 				# fixing possible links
 				r = re.findall('src="(.*)"',mini)
 				for it in r:
-					mini = mini.replace(it,baseurl + it)            
+					mini = mini.replace(it,baseurl + it)  
+
+				Date = pkey.split('_')[0]
+				if Show_As_Jalali == True:
+					gt = datetime.strptime(Date, '%Y-%m-%d %H:%M')
+					jd = gregorian_to_jalali(gt.year,gt.month,gt.day)
+					week = gt.weekday()
+					Date = f'{jweek[week]}، {jd[2]} {jmonth[jd[1]]} ماه {jd[0]}، ساعت {hc(str(gt.hour))}:{hc(str(gt.minute))}'
+
+
 				dic = {
-					'[& Post_Date &]':pkey.split('_')[0],
+					'[& Post_Date &]':Date,
 					"[& Post_Title &]":pval.split('\n')[1][1:],
 					"[& Post_MiniText &]" : mini,
 					"[& Post_Url &]":baseurl+"posts/"+posturl+".html",
@@ -513,6 +544,8 @@ def argparse(arg):
 	if "-v" in arg:
 		sprint(f'GrapeBlog ‌‌v{VERSION}',color=bcolors.blue)
 		return
+	if "-r" in arg:
+		system("rm dist/ -rf &> /dev/null")
 
 	# Eventually
 	do()

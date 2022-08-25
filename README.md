@@ -32,6 +32,7 @@ Version 1 Deployed.
 ☑️ Candy-ass Terminal Responses \
 ☑️ Simplify adding Custom Pages \
 ☑️ Screenshots and Demo \
+☑️ Jalali Calendar \
 ⬜ Simple Usage Guide \
 ⬜ Cross Platform Support \
 ⬜ Following PEP-8 Pattern \
@@ -42,7 +43,6 @@ Version 1 Deployed.
 ⬜ Design Another Themes \
 ⬜ Human Friendly gh-pages Deployer \
 ⬜ Add Useful Comments (in code) \
-⬜ Jalali Calendar \
 ⬜ Make Cli Tool \
 ⬜ Control through Web UI 
 
@@ -60,5 +60,5 @@ Script Covers this and you just have to don't mess with the .nojekyll file.
 ## Thanks To:
 - Jekyll Project for inspiration 
 - Cusdis Project for Comment Section
-
+- [jdf.scr.ir](https://jdf.scr.ir/jdf/python) for Jalali Date Convertor
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
