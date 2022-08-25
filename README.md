@@ -14,12 +14,13 @@ and for this goal, I found a project named Jekyll which I find it very complicat
 
 ## Key Features:
 ### Performance ⚡
-nothing is faster than vanilla HTML and CSS!
+Nothing is faster than vanilla HTML and CSS!
 ### Security 🛡️ 
-no backend = no vulnerability
+No backend = No vulnerability
 ### Easy to Use 👌 
 Just write your Post and Build it.
 ### Supports different Themes 🖼️
+Currently has Default RTL Theme.
 ### Comment System 💬         
 Who says static websites can't have comment system ?!
 
@@ -30,7 +31,7 @@ Version 1 Deployed.
 ☑️ Choose Proper Licence \
 ☑️ Candy-ass Terminal Responses \
 ☑️ Simplify adding Custom Pages \
-☑️ Screenshots and Demo
+☑️ Screenshots and Demo \
 ⬜ Cross Platform Support \
 ⬜ Following PEP-8 Pattern \
 ⬜ Increase GTMetrix of Default Template \
@@ -42,7 +43,7 @@ Version 1 Deployed.
 ⬜ Add Useful Comments (in code) \
 ⬜ Jalali Calendar \
 ⬜ Make Cli Tool \
-⬜ Control through Web UI \
+⬜ Control through Web UI 
 
 ## Notes:
 1. If You want to use Github Pages with GrapeBlog, there is a important thing that you should know:\
