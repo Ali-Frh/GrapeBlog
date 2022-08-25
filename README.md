@@ -26,6 +26,18 @@ Who says static websites can't have comment system ?!
 
 ## Project State:
 Version 1 Deployed.
+
+## Notes:
+1. If You want to use Github Pages with GrapeBlog, there is a important thing that you should know:\
+Github Idiotically Consider our Export (and maybe any static html file) as Jekyll Export and builds it with Jekyll builder \
+and because we are not based on Jekyll, it fails and you see a 404 page instead of your Magnificent Blog. \
+~~**Solution:** You have to make a file in / directory of your repo, with '.nojekyll' name to inform github that we are not using Jekyll. \
+(i'll change the script to cover this issue and make this file in the generated files)~~\
+Script Covers this and you just have to don't mess with the .nojekyll file.
+2. We use python-markdown package as markdown parser, [Here](https://daringfireball.net/projects/markdown/syntax) is the Syntax document of it's accent.
+(note that in this Markdown Accent you have to Use two spaces at the end of the line for newline effect)
+3. Do not Change Your Posts' Slug! Because our comment system linked to post's filename (Date_Slug) and if you change it you will lose your previous comments. (its fine for posts with no comments though).
+
 ## TODO:
 (in order of priority (completed first)) \
 ☑️ Choose Proper Licence \
@@ -47,19 +59,8 @@ Version 1 Deployed.
 ⬜ Post Recovery Tool \
 ⬜ Control through Web UI 
 
-## Notes:
-1. If You want to use Github Pages with GrapeBlog, there is a important thing that you should know:\
-Github Idiotically Consider our Export (and maybe any static html file) as Jekyll Export and builds it with Jekyll builder \
-and because we are not based on Jekyll, it fails and you see a 404 page instead of your Magnificent Blog. \
-~~**Solution:** You have to make a file in / directory of your repo, with '.nojekyll' name to inform github that we are not using Jekyll. \
-(i'll change the script to cover this issue and make this file in the generated files)~~\
-Script Covers this and you just have to don't mess with the .nojekyll file.
-2. We use python-markdown package as markdown parser, [Here](https://daringfireball.net/projects/markdown/syntax) is the Syntax document of it's accent.
-(note that in this Markdown Accent you have to Use two spaces at the end of the line for newline effect)
-3. Do not Change Your Posts' Slug! Because our comment system linked to post's filename (Date_Slug) and if you change it you will lose your previous comments. (its fine for posts with no comments though).
-
 ## Thanks To:
 - Jekyll Project for inspiration 
 - Cusdis Project for Comment Section
-- [jdf.scr.ir](https://jdf.scr.ir/jdf/python) for Jalali Date Convertor
+- [jdf.scr.ir](https://jdf.scr.ir/jdf/python) for Jalali Date Convertor \
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
