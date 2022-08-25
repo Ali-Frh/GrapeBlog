@@ -32,6 +32,7 @@ Version 1 Deployed.
 ☑️ Candy-ass Terminal Responses \
 ☑️ Simplify adding Custom Pages \
 ☑️ Screenshots and Demo \
+⬜ Simple Usage Guide \
 ⬜ Cross Platform Support \
 ⬜ Following PEP-8 Pattern \
 ⬜ Increase GTMetrix of Default Template \
