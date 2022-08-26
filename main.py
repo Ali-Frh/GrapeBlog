@@ -173,7 +173,8 @@ def makeHome():
 		"[& Latest_Posts &]":latest,
 		"[& Categories &]":categories,
 		"[& Nav_Links &]":navlinks,
-		"[& Base_Url &]":baseurl
+		"[& Base_Url &]":baseurl ,
+		"[& GB_Version &]":VERSION,
 	}
 	# base = base.replace('[& Home_Link &]',getenv('BaseUrl'))
 	for key,val in dic.items():
