@@ -16,6 +16,7 @@ import re
 from sys import argv
 from datetime import datetime
 from Plugins.jtime import gregorian_to_jalali,jweek,jmonth,hc
+from Plugins.imgutils import get_size
 
 load_dotenv('config.env')
 
@@ -291,6 +292,16 @@ def h_and_p(home):
 			temp = hpost_template
 			posturl = pkey.split('_')[0].split(' ')[0] + "_" + pkey.split('_')[1]
 			mini = markdown.markdown("\n".join(pval.split('\n')[2:])[:700] + "...")
+			
+			# Fixing Images CLS
+
+			cz = re.findall(r"<img[\w| |=\"\']+src=\"(.*) />",mini)
+			for zi in cz:
+				# Actually for image link in image links
+				size = get_size(f'Posts/{zi}')
+				mini = mini.replace(zi, f'{zi} width="{size[0]}" height="{size[1]}"')
+
+
 			# fixing possible links
 			r = re.findall('src="(.*)"',mini)
 			for it in r:
