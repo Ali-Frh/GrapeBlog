@@ -4,7 +4,7 @@
 # License: MIT																	#
 # (Do what ever you want at YOUR RISK, we dont take ANY responsibility at all)	#
 #--------------------------------------------------------------------------------
-VERSION = "1.1"
+VERSION = "1.2"
 
 
 import markdown
@@ -358,6 +358,16 @@ def individual_posts(home):
 		temp = hpost_template
 		posturl = pkey.split('_')[0].split(' ')[0] + "_" + pkey.split('_')[1]
 		txt = markdown.markdown("\n".join(pval.split('\n')[2:]))
+
+		# Fixing Images CLS
+		rex = r'<img[\w| |=\"\']+src=\"([\w:\/\.\-@!#$%^&\*\_]+)\" />'
+		cz = re.findall(rex,txt)
+		for zi in cz:
+			# Actually for image link in image links
+			size = get_size(f'Posts/{zi}')
+			txt = txt.replace(zi+"\"", f'{zi}\" width="{size[0]}" height="{size[1]}"')
+
+
 		# fixing possible links
 		r = re.findall('src="(.*)"',txt)
 		for it in r:
@@ -436,6 +446,18 @@ def individual_cats_gen(home):
 				temp = hpost_template
 				posturl = pkey.split('_')[0].split(' ')[0] + "_" + pkey.split('_')[1]
 				mini = markdown.markdown("\n".join(pval.split('\n')[2:])[:700] + '...')
+
+
+				# Fixing Images CLS
+				rex = r'<img[\w| |=\"\']+src=\"([\w:\/\.\-@!#$%^&\*\_]+)\" />'
+				cz = re.findall(rex,mini)
+				for zi in cz:
+					# Actually for image link in image links
+					size = get_size(f'Posts/{zi}')
+					mini = mini.replace(zi+"\"", f'{zi}\" width="{size[0]}" height="{size[1]}"')
+
+
+
 				# fixing possible links
 				r = re.findall('src="(.*)"',mini)
 				for it in r:

@@ -3,6 +3,7 @@
  /* NAVBAR  */
     html,body{
       margin:0;
+      font-display: swap;
     }
     body{
       background-color: MediumAquamarine;
