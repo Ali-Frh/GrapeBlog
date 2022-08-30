@@ -294,7 +294,7 @@ def h_and_p(home):
 			mini = markdown.markdown("\n".join(pval.split('\n')[2:])[:700] + "...")
 			
 			# Fixing Images CLS
-            rex = r'<img[\w| |=\"\']+src=\"([\w:\/\.\-@!#$%^&\*\_]+)\" />'
+			rex = r'<img[\w| |=\"\']+src=\"([\w:\/\.\-@!#$%^&\*\_]+)\" />'
 			cz = re.findall(rex,mini)
 			for zi in cz:
 				# Actually for image link in image links
