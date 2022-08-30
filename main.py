@@ -294,13 +294,12 @@ def h_and_p(home):
 			mini = markdown.markdown("\n".join(pval.split('\n')[2:])[:700] + "...")
 			
 			# Fixing Images CLS
-
-			cz = re.findall(r"<img[\w| |=\"\']+src=\"(.*) />",mini)
+            rex = r'<img[\w| |=\"\']+src=\"([\w:\/\.\-@!#$%^&\*\_]+)\" />'
+			cz = re.findall(rex,mini)
 			for zi in cz:
 				# Actually for image link in image links
 				size = get_size(f'Posts/{zi}')
-				mini = mini.replace(zi, f'{zi} width="{size[0]}" height="{size[1]}"')
-
+				mini = mini.replace(zi+"\"", f'{zi}\" width="{size[0]}" height="{size[1]}"')
 
 			# fixing possible links
 			r = re.findall('src="(.*)"',mini)
