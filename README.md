@@ -45,6 +45,7 @@ Script Covers this and you just have to don't mess with the .nojekyll file.
 ☑️ Simplify adding Custom Pages \
 ☑️ Screenshots and Demo \
 ☑️ Jalali Calendar \
+⬜ 404 Page \
 ⬜ Build Date Timestamp \
 ⬜ Simple Usage Guide \
 ⬜ Cross Platform Support \
