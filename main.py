@@ -299,7 +299,7 @@ def h_and_p(home):
 			for zi in cz:
 				# Actually for image link in image links
 				size = get_size(f'Posts/{zi}')
-				mini = mini.replace(zi+"\"", f'{zi}\" width="{size[0]}" height="{size[1]}"')
+				mini = mini.replace(zi+"\"", f'{zi}\" width="{size[0]}"')
 
 			# fixing possible links
 			r = re.findall('src="(.*)"',mini)
@@ -365,7 +365,7 @@ def individual_posts(home):
 		for zi in cz:
 			# Actually for image link in image links
 			size = get_size(f'Posts/{zi}')
-			txt = txt.replace(zi+"\"", f'{zi}\" width="{size[0]}" height="{size[1]}"')
+			txt = txt.replace(zi+"\"", f'{zi}\" width="{size[0]}"')
 
 
 		# fixing possible links
@@ -454,7 +454,7 @@ def individual_cats_gen(home):
 				for zi in cz:
 					# Actually for image link in image links
 					size = get_size(f'Posts/{zi}')
-					mini = mini.replace(zi+"\"", f'{zi}\" width="{size[0]}" height="{size[1]}"')
+					mini = mini.replace(zi+"\"", f'{zi}\" width="{size[0]}"')
 
 
 
