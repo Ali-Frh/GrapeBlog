@@ -105,7 +105,7 @@ def post_parser(md): # Parse .md files with grape standards
 	after = re.findall(r'---&\]([\s\S]*)',md)[0][1:]
 	text = "\n".join(after.split('\n')[1:]).strip()
 	title= after.split('\n')[0].replace('#','').strip()
-	print(title)
+	# print(title)
 	return [category,meta,text,title]
 
 
