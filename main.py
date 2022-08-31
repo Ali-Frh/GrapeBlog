@@ -21,6 +21,8 @@ from Plugins.imgutils import get_size
 load_dotenv('config.env')
 
 Show_As_Jalali = bool(getenv("Show_As_Jalali"))
+SEO_Home_Meta = str(getenv('SEO_Home_Meta'))
+
 # print(Show_As_Jalali,type(Show_As_Jalali))
 
 # Basic Data
@@ -92,6 +94,21 @@ def split_dict(d, n):
     for i in range(0, len(keys), n):
         yield {k: d[k] for k in keys[i: i + n]}
 
+def post_parser(md): # Parse .md files with grape standards
+	category = md.split('\n')[0]
+	meta = re.findall(r'\[&---\n([\s\S]*)---&\]',md)
+	if len(meta) == 0:
+		meta = ""
+	else:
+		meta = meta[0]
+	meta = meta.strip()
+	after = re.findall(r'---&\]([\s\S]*)',md)[0][1:]
+	text = "\n".join(after.split('\n')[1:]).strip()
+	title= after.split('\n')[0].replace('#','').strip()
+	print(title)
+	return [category,meta,text,title]
+
+
 #--------------------------------Description----------------------------------
 # This function analyze posts and categories, then add them in supposed dicts#
 #-----------------------------------------------------------------------------
@@ -144,7 +161,10 @@ def makeHome():
 	for key,val in last.items():
 		posturl = key.split('_')[0].split(' ')[0] + "_" + key.split('_')[1]
 		url = baseurl + "posts/" + posturl + ".html"
-		titl = val.split('\n')[1][1:]
+		pparsed = post_parser(val)
+		# titl = val.split('\n')[1][1:]
+		# fullttl = titl
+		titl =  pparsed[3]
 		fullttl = titl
 		if len(titl) > 30:
 			titl = titl[:30] + "..."
@@ -289,9 +309,11 @@ def h_and_p(home):
 		gen_html = ""
 
 		for pkey,pval in i.items():
+			pparsed = post_parser(pval)
 			temp = hpost_template
 			posturl = pkey.split('_')[0].split(' ')[0] + "_" + pkey.split('_')[1]
-			mini = markdown.markdown("\n".join(pval.split('\n')[2:])[:700] + "...")
+			mini = markdown.markdown(pparsed[2][:700] + "...")
+			title = pparsed [3]
 			
 			# Fixing Images CLS
 			rex = r'<img[\w| |=\"\']+src=\"([\w:\/\.\-@!#$%^&\*\_]+)\" />'
@@ -317,7 +339,7 @@ def h_and_p(home):
 
 			dic = {
 				'[& Post_Date &]':Date,
-				"[& Post_Title &]":pval.split('\n')[1][1:],
+				"[& Post_Title &]":title,
 				"[& Post_MiniText &]" : mini,
 				"[& Post_Url &]":baseurl+"posts/"+posturl+".html",
 				"[& Post_Category &]":categories_list[pval.split('\n')[0]],
@@ -330,6 +352,9 @@ def h_and_p(home):
 
 		gen_html = gen_html + paginator(len(posts_chunked),itr,'/')
 		dat = home.replace('[& Yield &]',gen_html)
+
+		dat = dat.replace('[& Meta &]',SEO_Home_Meta)
+
 		put(dist_path+"/"+page,dat)
 		if itr == len(posts_chunked):
 			sprint(f"Generated {itr} Pages Successfully \n",color=bcolors.green)
@@ -353,11 +378,16 @@ def individual_posts(home):
 	
 	i = 0
 	for pkey,pval in posts_asc.items():
+		pparsed = post_parser(pval)
+		title = pparsed[3]
+
 		gen_html = ""
 		slug = pkey.split('_')[1]
 		temp = hpost_template
 		posturl = pkey.split('_')[0].split(' ')[0] + "_" + pkey.split('_')[1]
-		txt = markdown.markdown("\n".join(pval.split('\n')[2:]))
+		# txt = markdown.markdown("\n".join(pval.split('\n')[2:]))
+		txt = markdown.markdown(pparsed[2])
+
 
 		# Fixing Images CLS
 		rex = r'<img[\w| |=\"\']+src=\"([\w:\/\.\-@!#$%^&\*\_]+)\" />'
@@ -383,7 +413,8 @@ def individual_posts(home):
 
 		dic = {
 			'[& Post_Date &]':Date,
-			"[& Post_Title &]":pval.split('\n')[1][1:],
+			# "[& Post_Title &]":pval.split('\n')[1][1:],
+			"[& Post_Title &]":title,
 			"[& Post_Text &]" :txt,
 			"[& Post_Url &]":baseurl+"posts/"+posturl+".html",
 			"[& Post_Category &]":categories_list[pval.split('\n')[0]]
@@ -399,7 +430,8 @@ def individual_posts(home):
 				"[& Cusdis_Key &]":getenv('Cusdis_Key'),
 				"[& Post_Id &]":pkey,
 				"[& Post_Url &]":baseurl+"posts/"+posturl+".html",
-				"[& Post_Title &]":pval.split('\n')[1][1:],
+				# "[& Post_Title &]":pval.split('\n')[1][1:],
+				"[& Post_Title &]":title,
 				"[& Base_Url &]":baseurl
 			}
 
@@ -407,8 +439,10 @@ def individual_posts(home):
 				temp = temp.replace(tk,tv)
 
 			gen_html = gen_html + temp
+
 		home_sample = home
 		dat = home_sample.replace('[& Yield &]',gen_html)
+		dat = dat.replace('[& Meta &]', pparsed[1])
 		put(dist_path+"/posts/"+posturl+".html",dat)
 		sprint(f'Generating Individual Post {i}/{len(posts_asc.items())}',color=bcolors.yellow,slp=0.01)
 		i = i + 1
@@ -443,9 +477,12 @@ def individual_cats_gen(home):
 
 			for pkey,pval in i.items():
 				#print(pkey)
+				pparsed = post_parser(pval)
+				title = pparsed[3]
+				minitext = pparsed[2][:700] + '...'
 				temp = hpost_template
 				posturl = pkey.split('_')[0].split(' ')[0] + "_" + pkey.split('_')[1]
-				mini = markdown.markdown("\n".join(pval.split('\n')[2:])[:700] + '...')
+				mini = markdown.markdown(minitext)
 
 
 				# Fixing Images CLS
@@ -473,7 +510,7 @@ def individual_cats_gen(home):
 
 				dic = {
 					'[& Post_Date &]':Date,
-					"[& Post_Title &]":pval.split('\n')[1][1:],
+					"[& Post_Title &]":title,
 					"[& Post_MiniText &]" : mini,
 					"[& Post_Url &]":baseurl+"posts/"+posturl+".html",
 					"[& Post_Category &]":categories_list[pval.split('\n')[0]]
@@ -579,7 +616,9 @@ def argparse(arg):
 		return
 	if "-r" in arg:
 		system("rm dist/ -rf &> /dev/null")
-
+	# if "-kh" in arg: # Used For Test
+	# 	print(post_parser(fetch('Posts/1970-01-01 00:00_Sample.md')))
+	# 	return 0
 	# Eventually
 	do()
 	
