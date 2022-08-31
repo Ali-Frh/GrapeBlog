@@ -3,7 +3,6 @@
  /* NAVBAR  */
     html,body{
       margin:0;
-      font-display: swap;
     }
     body{
       background-color: MediumAquamarine;
@@ -256,6 +255,7 @@
       }
       @font-face {
         font-family: 'Sahel';
+        font-display: swap;
         src: url('./Sahel.woff');
     }
 
