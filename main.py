@@ -16,12 +16,13 @@ import re
 from sys import argv
 from datetime import datetime
 from Plugins.jtime import gregorian_to_jalali,jweek,jmonth,hc
-from Plugins.imgutils import get_size
+from Plugins.imgutils import get_size,compress_assets
 
 load_dotenv('config.env')
 
 Show_As_Jalali = bool(getenv("Show_As_Jalali"))
 SEO_Home_Meta = str(getenv('SEO_Home_Meta'))
+Compress_Assets = bool(getenv('Compress_Assets'))
 
 # print(Show_As_Jalali,type(Show_As_Jalali))
 
@@ -326,7 +327,11 @@ def h_and_p(home):
 			# fixing possible links
 			r = re.findall('src="(.*)"',mini)
 			for it in r:
-				mini = mini.replace(it,baseurl + it)            
+				mini = mini.replace(it,baseurl + it)
+
+			# For compression
+			if Compress_Assets == True:
+				mini = mini.replace('.jpg','.webp').replace('.jpeg','.webp').replace('.png','.webp')            
 
 			Date = pkey.split('_')[0]
 			if Show_As_Jalali == True:
@@ -402,6 +407,10 @@ def individual_posts(home):
 		r = re.findall('src="(.*)"',txt)
 		for it in r:
 			txt = txt.replace(it,baseurl + it) 
+
+		# For compression
+			if Compress_Assets == True:
+				txt = txt.replace('.jpg','.webp').replace('.jpeg','.webp').replace('.png','.webp')          
 
 		Date = pkey.split('_')[0]
 		if Show_As_Jalali == True:
@@ -500,6 +509,10 @@ def individual_cats_gen(home):
 				for it in r:
 					mini = mini.replace(it,baseurl + it)  
 
+				# For compression
+				if Compress_Assets == True:
+					mini = mini.replace('.jpg','.webp').replace('.jpeg','.webp').replace('.png','.webp')          
+
 				Date = pkey.split('_')[0]
 				if Show_As_Jalali == True:
 					gt = datetime.strptime(Date, '%Y-%m-%d %H:%M')
@@ -542,11 +555,18 @@ def res_assets():
 	# below crap fixing gh-pages issue with baseurl
 	f = fetch(f'{dist_path}/assets/cusdis.es.full.js')
 	put(f'{dist_path}/assets/cusdis.es.full.js',f.replace('[& Base_Url &]',baseurl))
-#	f = fetch(f'{dist_path}/cusdis.es.full.js')
-#	put(f'{dist_path}/cusdis.es.full.js',f.replace('[& Base_Url &]',baseurl))
+	# fixing gh-pages issue with non-jekyll static sites
 	system(f'touch {dist_path}/.nojekyll')
-	
 	sprint('Assets Resolved.\n',color=bcolors.green)
+
+	# Compress Assets
+	if Compress_Assets == True:
+		sprint('Compressing Images',color=bcolors.bold)
+
+		compress_assets()
+
+		sprint('Compressing Done.\n',color=bcolors.green)
+
 	return 1
 
 #---------------------Description----------------------
@@ -587,7 +607,7 @@ def do():
 	sprint('Generating Home Page',color=bcolors.bold)
 	h_and_p(home)
 
-	# STEP 4 - Resolve Assets
+	# STEP 4 - Resolve Assets and maybe compress them
 	res_assets()
 
 	# STEP 5 - Make Individual Posts
