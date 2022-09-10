@@ -585,6 +585,13 @@ def gen_pages(home):
 		generated = home.replace('[& Yield &]',res)
 		put(f'{dist_path}/pages/{i.split("_")[1][:-3]}.html',generated)
 	sprint(f'Generated {len(di)} Individual Pages.\n',color=bcolors.green)
+
+	sprint('Generating 404 Page',color=bcolors.bold)
+	pag = fetch(template+"404.html")
+	pag = pag.replace('[& Base_Url &]', baseurl)
+	gener = home.replace( '[& Yield &]', pag )
+	put(dist_path+"/404.html",gener)
+	sprint("Generated 404 Page.",color=bcolors.green)
 	return 1
 		
 		

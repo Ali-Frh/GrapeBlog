@@ -49,13 +49,13 @@ __In order of priority__ \
 ═══════ ᴠᴇʀꜱɪᴏɴ ₁.₀ ═══════╛	 \
 ☑️ Jalali Calendar \
 ═══════ ᴠᴇʀꜱɪᴏɴ ₁.₁ ═══════╛ \
-⬜ Image Optimizer (Convert & Compress) \
+☑️ Image Optimizer (Convert & Compress) \
+☑️ Increase GTMetrix of Default Template \
 ⬜ 404 Page \
 ⬜ Build Date Timestamp \
 ⬜ Simple Usage Guide \
 ⬜ Cross Platform Support \
 ⬜ Following PEP-8 Pattern \
-⬜ Increase GTMetrix of Default Template \
 ⬜ Make LTR Template \
 ⬜ Make Wiki and Theming Guide \
 ⬜ Assets Watermarker \
