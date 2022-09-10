@@ -1,3 +1,4 @@
+
 # GrapeBlog 🍇
 ![Development Status](https://img.shields.io/badge/Development%20Status-Beta-green)
 ![License](https://img.shields.io/badge/License-MIT-blue) \
@@ -38,13 +39,17 @@ Script Covers this and you just have to don't mess with the .nojekyll file.
 (note that in this Markdown Accent you have to Use two spaces at the end of the line for newline effect)
 3. Do not Change Your Posts' Slug! Because our comment system linked to post's filename (Date_Slug) and if you change it you will lose your previous comments. (its fine for posts with no comments though).
 
-## TODO:
-(in order of priority (completed first)) \
-☑️ Choose Proper Licence \
+## Road Map:
+__In order of priority__ \
+════════ Start ! ════════╕	 \
+☑️ Choose Proper Licence                   \
 ☑️ Candy-ass Terminal Responses \
 ☑️ Simplify adding Custom Pages \
 ☑️ Screenshots and Demo \
+═══════ ᴠᴇʀꜱɪᴏɴ ₁.₀ ═══════╛	 \
 ☑️ Jalali Calendar \
+═══════ ᴠᴇʀꜱɪᴏɴ ₁.₁ ═══════╛ \
+⬜ Image Optimizer (Convert & Compress) \
 ⬜ 404 Page \
 ⬜ Build Date Timestamp \
 ⬜ Simple Usage Guide \
@@ -59,8 +64,8 @@ Script Covers this and you just have to don't mess with the .nojekyll file.
 ⬜ Add Useful Comments (in code) \
 ⬜ Make Cli Tool \
 ⬜ Post Recovery Tool \
-⬜ Control through Web UI 
-
+⬜ Control through Web UI    
+₀₁₂₃₄₅₆₇₈₉
 ## Thanks To:
 - Jekyll Project for inspiration 
 - Cusdis Project for Comment Section
