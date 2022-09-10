@@ -26,7 +26,8 @@ Currently has Default RTL Theme.
 Who says static websites can't have comment system ?!
 
 ## Project State:
-Version 1 Deployed.
+Version 1.1 Released.
+Version 1.2 Under Development.
 
 ## Notes:
 1. If You want to use Github Pages with GrapeBlog, there is a important thing that you should know:\
