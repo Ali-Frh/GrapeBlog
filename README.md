@@ -49,9 +49,9 @@ __In order of priority__ \
 ═══════ ᴠᴇʀꜱɪᴏɴ ₁.₀ ═══════╛	 \
 ☑️ Jalali Calendar \
 ═══════ ᴠᴇʀꜱɪᴏɴ ₁.₁ ═══════╛ \
-☑️ Image Optimizer (Convert & Compress) \
 ☑️ Increase GTMetrix of Default Template \
-⬜ 404 Page \
+☑️ Image Optimizer (Convert & Compress) \
+☑️ 404 Page \
 ⬜ Build Date Timestamp \
 ⬜ Simple Usage Guide \
 ⬜ Cross Platform Support \
