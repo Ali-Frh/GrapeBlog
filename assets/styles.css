@@ -1,0 +1,311 @@
+
+
+ /* NAVBAR  */
+    html,body{
+      margin:0;
+    }
+    body{
+      background-color: MediumAquamarine;
+    }
+
+    
+    ul{
+      list-style:none;
+    } 
+    li>a{
+      text-decoration:none;
+      color:black;
+    }
+    li>a:hover{
+      color:darkslategray;
+    }
+    #nav-logo{
+      display: inline-flex;
+      justify-content: end;
+      position: absolute;
+      left:  0px;
+      top:  0px;
+      color: black;
+      text-decoration: none;
+    }
+
+
+    #nav-logo>span{
+      padding-top: 1.3rem;
+      font-size: 1.2rem;
+      color: black;
+      text-decoration: none;
+      /* font-weight: bold; */
+    }
+    .navcontainer{
+      margin:0px 2rem 0px 2rem;
+      padding-top: 0.5rem;
+      display:flex;
+      justify-content: space-between;
+      position: relative;
+    }
+    .navcontainer>div>ul>li{
+      margin-left: 1rem;
+    }
+ 
+    #navbar{
+      width: auto;
+      height: 4.5rem;
+      background: springgreen;
+      box-shadow: 3px 3px 5px mediumseagreen;
+      /* border-radius: 10px; */
+      /* margin: 0.5rem 2rem 0.5rem 2rem; */
+    }
+
+    /* Hamburger */
+    #hamburger{
+      font-size: 2.5rem;
+      background-color: transparent;
+      color:black;
+      border:0;
+      width: auto;
+      height: auto;
+      /* margin-right: 2rem; */
+      margin-top: 0.2rem;
+      position: absolute;
+      cursor: pointer;
+      outline: none;
+      display: none;
+    }
+    .hamburger-meat{
+      display: inline-flex;
+    }
+    .show{
+      display: inline-flex;
+    }
+
+
+
+
+
+    /* END NAVBAR  */
+
+    /* START POST(S) */
+    #nextLayer{
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 2rem 0.5rem 2rem;
+      gap: 1%;
+    }
+    #main{
+      margin-top:  -0.5rem;
+    }
+    .post{
+      background-color: mintcream;
+      border-radius: 10px;
+      padding:  1rem;
+      margin-top: 0.5rem;
+      width: 60vw;
+    }
+    .mini-post{
+      margin-bottom: 1.2rem;
+    }
+
+    .post-date{
+      margin-right: 0.7rem;
+    }
+    .date-br{
+      display: none;
+    }
+
+
+
+    #sideBar{
+      width: 100%;
+      
+      /* box-shadow: 1px 1px 3px lightblue; */
+
+      align-self: flex-start;
+      /* height: 30vh; */
+    }
+
+    .post-title{
+      font-size: 1.3rem;
+      /* margin-bottom: 0.3rem; */
+    }
+
+    .post-date{
+      font-size: 0.8rem;
+      color: #5c5656;
+      margin: -0.2rem 0.2rem 0.3rem 0;
+    }
+
+    .continue-post{
+      cursor: pointer;
+      background-color: mintcream;
+      border: 1px solid gray;
+      box-shadow: 1px 1px 3px gray;
+      padding: 0.5rem;
+      border-radius: 5px;
+      font-size: 0.9rem;
+      color: #36454F;
+      text-decoration: none;
+    }
+
+    .continue-post:hover{
+      border-color: black;
+      color: black;
+      /* box-shadow: 1px 1px 3px black; */
+    }
+
+    @media(max-width: 768px){
+      #nextLayer{
+        display: block;
+        padding: 0.5rem;
+      }
+      .post{
+        width:  auto;
+        padding: 1rem;
+      }
+       #sideBar{
+        width: auto;
+        margin-top: 0.5rem;
+        /* padding: 1rem; */
+       }
+
+        .post-date{
+          margin-right: 0rem;
+        }
+        .date-br{
+          display: block;
+        }
+
+
+       #hamburger{
+        display: block;
+       }
+       .hamburger-meat{
+        display: none;
+        margin-top: 4.5rem;
+        background-color: springgreen;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 5px;
+       }
+       .hamburger-meat>li{
+        margin-top: 0.3rem;
+       }
+       .show{
+        display: block;
+       }
+    }
+
+
+
+
+
+      /* PAGINATOR  */
+      #paginator > ul{
+        display: inline-flex;
+        justify-content: center;
+        gap: 1%;
+        padding-inline-start: 0px !important;
+      }
+
+      #paginator > ul > li > a{
+        background-color: mintcream;
+        border-radius: 10px;
+        padding: 0.8rem;
+        border: 1px solid gray;
+        /* box-shadow: 1px 1px 3px gray; */
+      }
+      .current-page{
+          /* pointer-events: none; */
+          cursor: not-allowed;
+          opacity: 0.8;
+      }
+
+      /* FOOTER SECTION   */
+      #footer{
+        height: 3rem;
+        width: auto;
+        height: auto;
+        background: springgreen;
+        box-shadow: 3px -3px 5px mediumseagreen;
+
+      }
+
+      .footcontainer{
+        margin:0px 2rem 0px 2rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+      }
+
+      .footcontainer>span>a{
+        color: rebeccapurple;
+      }
+
+/* 
+      #cusdis_thread{
+      	background-color: red !important;
+      } */
+
+      @font-face {
+      	font-family: 'BTitr';
+      	src: url('./BTitr.woff');
+      }
+
+      .btitr{
+      	font-family: 'BTitr';
+      }
+      @font-face {
+        font-family: 'Sahel';
+        font-display: swap;
+        src: url('./Sahel.woff');
+    }
+
+    html{
+        font-family: 'Sahel';
+    }
+
+
+
+    /* sideBar */
+
+    #sideBar>div>ul{
+    	padding-right: 1rem;
+    }
+
+    /* .sideCard> */
+
+    .sideCard{
+    	border-radius: 10px;
+      padding: 1rem;
+      background-color: powderblue;
+    }
+
+    .mt-2{
+    	margin-top: 0.5rem;
+    }
+
+    .mini-post > * > img{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      /* width: 50%; */
+      max-width: 100%;
+      border-radius: 5px;
+      margin-bottom: 0.7rem;
+    }
+
+    .version{
+      font-size: 0.8rem;
+      /* opacity: 90%; */
+    }
+
+
+    /* 404 page */
+
+    .pagenotfound > *{
+      display:block;
+      font-weight:bold;
+      margin-left: auto;
+      margin-right: auto;
+      direction:rtl;
+      text-align:center;
+    }
