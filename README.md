@@ -54,7 +54,7 @@ __In order of priority__ \
 ☑️ Image Optimizer (Convert & Compress) \
 ☑️ 404 Page \
 ═══════ ᴠᴇʀꜱɪᴏɴ ₁.₂ ═══════╛ \
-⬜ Site Map \
+⬜ Sitemap, rss \
 ⬜ Build Date Timestamp \
 ⬜ Simple Usage Guide \
 ⬜ Cross Platform Support \
